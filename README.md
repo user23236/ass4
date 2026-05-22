@@ -1,88 +1,36 @@
-# Assignment 4: Graph Traversal and Representation System
+# README Analysis Answers
 
-## Project Overview
+## How does graph size affect BFS and DFS performance?
 
-This project implements graph traversal algorithms using an adjacency list representation in Java.
-
-The system supports:
-- Vertex and Edge representation
-- Graph construction
-- Breadth-First Search (BFS)
-- Depth-First Search (DFS)
-- Performance analysis using execution time measurements
-
-The goal of this assignment is to understand graph structures, traversal algorithms, and algorithm complexity analysis.
+As graph size increases, traversal time also increases because more vertices and edges must be visited.
 
 ---
 
-# Graph Structure
+## Which traversal was faster?
 
-A graph consists of:
-- Vertices (nodes)
-- Edges (connections between nodes)
-
-This project uses an adjacency list representation because it is memory efficient and suitable for sparse graphs.
-
-Example:
-
-```text
-0 -> 1 2
-1 -> 3
-2 -> 4
-```
+DFS was slightly faster in most experiments because it uses recursion and fewer queue operations.
 
 ---
 
-# Class Descriptions
+## Do results match O(V + E)?
 
-## Vertex Class
+Yes. Both algorithms visit each vertex and edge once, which matches the expected time complexity: O(V + E)
 
-Represents a graph vertex.
+## How does graph structure affect traversal order?
 
-Fields:
-- `id` — unique vertex identifier
-
-Methods:
-- Constructor
-- Getter
-- `toString()`
+BFS explores level-by-level, while DFS explores deeply before backtracking. Different edge connections change traversal order.
 
 ---
 
-## Edge Class
+## When is BFS preferred over DFS?
 
-Represents a connection between two vertices.
-
-Fields:
-- `source`
-- `destination`
-
-Methods:
-- Constructor
-- Getters
-- `toString()`
+BFS is preferred when finding the shortest path in unweighted graphs.
 
 ---
 
-## Graph Class
+## What are limitations of DFS?
 
-Stores the graph using an adjacency list.
-
-Main methods:
-- `addVertex()`
-- `addEdge()`
-- `printGraph()`
-- `bfs()`
-- `dfs()`
-
----
-
-## Experiment Class
-
-Handles:
-- Traversal execution
-- Performance measurements
-- Multiple graph tests
+DFS can go very deep and may cause stack overflow in very large graphs.
 
 ---
 
@@ -135,9 +83,9 @@ O(V + E)
 
 | Graph Size | BFS Time (ns) | DFS Time (ns) |
 |------------|---------------|---------------|
-| 10         | 145000        | 98000         |
-| 30         | 230000        | 170000        |
-| 100        | 680000        | 590000        |
+| 10         | 1219700       | 392300        |
+| 30         | 780700        | 745200        |
+| 100        | 2139000       | 1882100       |
 
 ---
 
@@ -155,19 +103,24 @@ O(V + E)
 
 ## Graph Output
 
-(Add screenshot here)
+<img width="292" height="364" alt="Снимок экрана 2026-05-22 214330" src="https://github.com/user-attachments/assets/8f0f1f46-c48e-46cc-aab3-dfba3d763c67" />
+
 
 ## BFS Traversal
 
-(Add screenshot here)
+<img width="234" height="92" alt="image" src="https://github.com/user-attachments/assets/aea7edfd-c510-457b-bf7a-96be1d7be6e8" />
+
 
 ## DFS Traversal
 
-(Add screenshot here)
+<img width="217" height="98" alt="image" src="https://github.com/user-attachments/assets/ea44a9e8-2b99-4d67-a9e7-d0277116b7f7" />
+
 
 ## Performance Results
 
-(Add screenshot here)
+<img width="803" height="319" alt="image" src="https://github.com/user-attachments/assets/a88e198f-21a2-467c-8590-0b3dd98be7da" />
+<img width="1729" height="363" alt="image" src="https://github.com/user-attachments/assets/748e30b0-1adf-4bc1-99d7-61861f4d4785" />
+
 
 ---
 
@@ -177,26 +130,6 @@ Through this assignment, I learned how graph traversal algorithms work and how g
 
 I understood the difference between BFS and DFS, especially how BFS explores level-by-level while DFS explores deeply before backtracking.
 
-One challenge during implementation was understanding adjacency lists and recursion in DFS. After testing different graph structures, the traversal behavior became much clearer.
-
----
-
-# Repository Structure
-
-```text
-assignment3-graphs/
-├── src/
-├── docs/
-├── README.md
-└── .gitignore
-```
-
----
-
-# Technologies Used
-
-- Java
-- IntelliJ IDEA
-- Git & GitHub
+Didn't face any challenge during this assignment
 
   
